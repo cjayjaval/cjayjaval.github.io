@@ -9,10 +9,9 @@
 <script>
 (function () {
   var t = null;
-  try { t = localStorage.getItem('theme'); } catch (e) {}
-  if (t !== 'light' && t !== 'dark') {
-    t = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
-  }
+  try { t = sessionStorage.getItem('theme'); } catch (e) {}
+  try { localStorage.removeItem('theme'); } catch (e) {}
+  if (t !== 'light' && t !== 'dark') t = 'light';
   document.documentElement.setAttribute('data-theme', t);
 })();
 </script>
@@ -801,7 +800,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   var meta = document.querySelector('meta[name="theme-color"]');
   var COLORS = { light: '#F7F8FA', dark: '#0F151D' };
   var saved = null;
-  try { saved = localStorage.getItem('theme'); } catch (e) {}
+  try { saved = sessionStorage.getItem('theme'); } catch (e) {}
 
   function apply(t) {
     root.setAttribute('data-theme', t);
@@ -822,14 +821,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       }
       apply(next);
       saved = next;
-      try { localStorage.setItem('theme', next); } catch (e) {}
-    });
-  }
-
-  var mq = window.matchMedia && matchMedia('(prefers-color-scheme: dark)');
-  if (mq && mq.addEventListener) {
-    mq.addEventListener('change', function (e) {
-      if (!saved) apply(e.matches ? 'dark' : 'light');
+      try { sessionStorage.setItem('theme', next); } catch (e) {}
     });
   }
 })();
