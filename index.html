@@ -95,6 +95,7 @@ img { display: block; max-width: 100%; }
 .skip { position: absolute; left: 16px; top: -60px; z-index: 30; background: var(--ink); color: var(--on-ink); padding: 10px 16px; border-radius: 8px; font-weight: 600; text-decoration: none; }
 .skip:focus { top: 12px; color: var(--on-ink); }
 .wrap { width: min(1120px, 100% - 48px); margin-inline: auto; }
+#skills .wrap { width: min(1320px, 100% - 48px); }
 
 /* Buttons */
 .btn {
@@ -173,6 +174,8 @@ html.theme-anim, html.theme-anim *:not(.knob), html.theme-anim *:not(.knob)::bef
 
 /* Portfolio documents */
 .docs { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 28px; align-items: start; }
+.group-head { font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 0 0 18px; }
+.group-head + .docs { margin-bottom: 44px; }
 .doc { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
 .doc-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 22px; border-bottom: 1px solid var(--line); background: var(--doc-tint); }
 .doc-head h3 { font-size: 1.05rem; font-weight: 650; }
@@ -225,7 +228,7 @@ html.theme-anim, html.theme-anim *:not(.knob), html.theme-anim *:not(.knob)::bef
 code { font-family: var(--mono); font-size: 0.86em; background: var(--tint); padding: 1px 6px; border-radius: 4px; }
 
 /* Playwright projects */
-.projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 28px; }
+.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-top: 28px; }
 .proj { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 26px 26px 24px; display: flex; flex-direction: column; }
 .proj h3 { font-size: 1.25rem; font-weight: 650; }
 .proj p { color: var(--muted); margin: 10px 0 14px; }
@@ -234,6 +237,8 @@ code { font-family: var(--mono); font-size: 0.86em; background: var(--tint); pad
 .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
 .tags li { font-size: 0.85rem; font-weight: 500; padding: 3px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg); }
 .proj .btn { margin-top: auto; align-self: flex-start; }
+.proj-actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 10px; }
+.proj-actions .btn { margin-top: 0; }
 
 /* Experience */
 .timeline { list-style: none; }
@@ -261,7 +266,7 @@ code { font-family: var(--mono); font-size: 0.86em; background: var(--tint); pad
 .edu p { margin: 2px 0 0; color: var(--muted); }
 
 /* Skills */
-.skill-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+.skill-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px; }
 .skill-grid h3 { font-size: 1.05rem; font-weight: 650; padding-bottom: 12px; border-bottom: 2px solid var(--ink); }
 .skill-grid ul { list-style: none; }
 .skill-grid li { padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 0.97rem; }
@@ -323,6 +328,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 }
 @media (max-width: 520px) {
   .wrap { width: calc(100% - 36px); }
+  #skills .wrap { width: calc(100% - 36px); }
   .skill-grid { grid-template-columns: 1fr; gap: 28px; }
   .doc-head, .doc-body, .doc-note { padding-left: 18px; padding-right: 18px; }
   .kv { grid-template-columns: 1fr; gap: 0; }
@@ -391,14 +397,14 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <div class="about-grid">
         <div>
           <p>I've spent nearly 12 years in QA and IT, testing everything from engine control unit source code and point-of-sale systems to web and mobile gaming platforms with their content management systems. That range means I'm comfortable reading requirements, designing test cases, and finding where a product breaks in real use.</p>
-          <p>I've worked in Agile teams alongside business analysts and developers, tracked defects through UAT, staging, and production, and prepared test reports throughout the testing process. I also spent two years as a System Analyst, where I worked closely with clients and developers on requirements gathering, creating functional requirements, system documentation, and user manuals. This experience gives me a strong understanding of both the requirements and testing sides of software development.</p>
+          <p>I've worked in Agile teams alongside business analysts and developers, tracked defects through UAT, staging, and production, and prepared test reports throughout the testing process. I also spent two years as a Business/System Analyst, where I worked closely with clients and developers on requirements gathering, creating functional requirements, system documentation, and user manuals. This experience gives me a strong understanding of both the requirements and testing sides of software development.</p>
           <p>I'm currently looking for QA and software testing opportunities. Alongside manual testing, I'm building Playwright automation skills through personal end-to-end projects.</p>
         </div>
         <dl class="glance">
           <div><dt>Experience</dt><dd>12 years in QA and IT</dd></div>
           <div><dt>Platforms tested</dt><dd>Web, desktop and mobile</dd></div>
-          <div><dt>Also worked as</dt><dd>BA/System analyst, 2 years</dd></div>
-          <div><dt>Handled projects</dt><dd>Inventory, POS, Payroll, E-commerce, Games integration for web & app, CMS</dd></div>
+          <div><dt>Also worked as</dt><dd>Business/System Analyst, 2 years</dd></div>
+          <div><dt>Handled projects</dt><dd>Inventory, POS, Payroll, E-commerce, Games integration for web & app, CMS & Back Office</dd></div>
           <div><dt>Based in</dt><dd>Metro Manila, Philippines</dd></div>
           <div><dt>Work preference</dt><dd>Hybrid | Remote</dd></div>
           <div><dt>Open to</dt><dd>Full-Time | Contract | Remote Opportunities</dd></div>
@@ -420,13 +426,14 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <div class="body">
             <h3>Sr. Software QA Analyst</h3>
             <div class="org">Anagenesis Inc.</div>
-            <p class="proj">Games integration for web and mobile app, CMS</p>
+            <p class="proj">Games integration for web and mobile apps, CMS &amp; Back Office</p>
             <ul>
               <li>Reviewed BRDs, created test cases, and validated new features before production release.</li>
               <li>Worked with business analysts and developers to clarify requirements and verify defect fixes.</li>
               <li>Ran functional, regression and end-to-end testing for web and mobile gaming platforms.</li>
               <li>Logged, tracked and validated defects in Jira across UAT, staging and production.</li>
-              <li>Validated CMS configurations, promotions, reports, rebates and game integrations.</li>
+              <li>Validated CMS and back office configurations, promotions, reports, rebates and game integrations.</li>
+              <li>Onboarded and mentored newly hired QAs and introduced them to team workflows and testing processes.</li>
             </ul>
           </div>
         </li>
@@ -436,7 +443,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <div class="body">
             <h3>Sr. Software QA Analyst</h3>
             <div class="org">Cybilltek Software Inc. (CSI)</div>
-            <p class="proj">Games integration for web and mobile app, CMS</p>
+            <p class="proj">Games integration for web and mobile apps, CMS &amp; Back Office</p>
             <ul>
               <li>Worked as a senior QA for three years until the company ceased operations, then was rehired under the same leadership when it relaunched as Anagenesis Inc., continuing in the same role on the same project.</li>
             </ul>
@@ -446,15 +453,15 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <li class="job">
           <div class="when">May 2019 to June 2022</div>
           <div class="body">
-            <h3>Sr. Software QA / System Analyst</h3>
+            <h3>Sr. Software QA / System Analyst / Business Analyst</h3>
             <div class="org">Bonfire Technologies and Solutions Corp.</div>
-            <p class="proj">Inventory system, payroll system, kiosk ordering system, barangay services app</p>
+            <p class="proj">Inventory &amp; Sales, Payroll, E-commerce, Barangay Services applications</p>
             <ul>
               <li>Served as both QA engineer and system analyst for multiple business applications.</li>
-              <li>Gathered requirements and wrote functional requirement documents and system specifications.</li>
-              <li>Designed system mockups to visualize proposed features.</li>
-              <li>Designed test cases and validated implemented features against business requirements.</li>
-              <li>Took part in the full software development life cycle, from requirements gathering and system design to testing and deployment.</li>
+              <li>Gathered and analyzed requirements; created functional requirement documents, system specifications, system mockups and user manuals.</li>
+              <li>Designed test cases and validated implemented features against business requirements throughout the SDLC, from requirements gathering and system design to testing and deployment.</li>
+              <li>Performed manual testing across web and desktop applications, including integration, system, regression and UAT.</li>
+              <li>Performed basic API testing and database validation.</li>
             </ul>
           </div>
         </li>
@@ -470,9 +477,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
               <div class="org">Nelsoft Systems Inc. (NSI)</div>
               <p class="proj">Inventory system, POS</p>
               <ul>
-                <li>Performed manual testing for web and desktop POS applications.</li>
-                <li>Ran integration, system, regression and end-to-end testing.</li>
+                <li>Performed manual testing for web and desktop POS applications, including functional, exploratory, integration, system, regression and end-to-end testing.</li>
                 <li>Created data-driven regression test scripts using the company's internal automation tool.</li>
+                <li>Created and tracked defects using Mantis Bug Tracker and Trello.</li>
+                <li>Used Sourcetree as part of the team's source-code repository workflow.</li>
               </ul>
             </div>
           </li>
@@ -520,9 +528,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <div class="wrap">
       <div class="section-head">
         <h2>Portfolio</h2>
-        <p>Two sample documents show how I report my findings. Below them are two Playwright projects you can read on GitHub.</p>
+        <p>QA work samples that show how I report findings, and featured projects that show how I build and test.</p>
       </div>
 
+      <h3 class="group-head">QA Work Samples</h3>
       <div class="docs">
 
         <article class="doc" aria-labelledby="report-title">
@@ -619,7 +628,15 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
       </div>
 
+      <h3 class="group-head">Featured Projects</h3>
       <div class="projects">
+        <article class="proj">
+          <h3>E-commerce Playwright project</h3>
+          <p>End-to-end UI tests that follow a shopper from login to order history, checking product details, pricing and the checkout flow along the way.</p>
+          <p class="covers"><b>Covers:</b> login, product selection, cart validation, checkout, coupon application, order placement and order history. Credentials are kept in environment variables.</p>
+          <ul class="tags"><li>Playwright</li><li>JavaScript</li><li>Page Object Model</li></ul>
+          <a class="btn small" href="https://github.com/cjayjaval/playwright-ecommerce" rel="noopener">View on GitHub</a>
+        </article>
         <article class="proj">
           <h3>Event-booking Playwright project</h3>
           <p>End-to-end UI tests for creating an event and booking it, then confirming that the listing and the remaining seats update correctly.</p>
@@ -628,11 +645,14 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <a class="btn small" href="https://github.com/cjayjaval/playwright-event-booking" rel="noopener">View on GitHub</a>
         </article>
         <article class="proj">
-          <h3>E-commerce Playwright project</h3>
-          <p>End-to-end UI tests that follow a shopper from login to order history, checking product details, pricing and the checkout flow along the way.</p>
-          <p class="covers"><b>Covers:</b> login, product selection, cart validation, checkout, coupon application, order placement and order history. Credentials are kept in environment variables.</p>
-          <ul class="tags"><li>Playwright</li><li>JavaScript</li><li>Page Object Model</li></ul>
-          <a class="btn small" href="https://github.com/cjayjaval/playwright-ecommerce" rel="noopener">View on GitHub</a>
+          <h3>JobTrack AI</h3>
+          <p>A web-based job application tracker I designed and built, with AI-powered resume-to-job matching that flags matched, partial and missing requirements.</p>
+          <p class="covers"><b>Covers:</b> application management, search, filtering, sorting, form validation and local data persistence. QA practices were applied throughout development, including testing workflows, edge cases and AI response consistency.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>localStorage</li><li>AI/LLM Integration</li></ul>
+          <div class="proj-actions">
+            <a class="btn small" href="https://github.com/cjayjaval/jobtrack-ai" rel="noopener">View on GitHub</a>
+            <a class="btn small" href="https://cjayjaval.github.io/jobtrack-ai/" rel="noopener">Live Demo</a>
+          </div>
         </article>
       </div>
     </div>
@@ -658,6 +678,17 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           </ul>
         </div>
         <div>
+          <h3>Ways of working</h3>
+          <ul>
+            <li>Agile development</li>
+            <li>Defect management</li>
+            <li>Requirement analysis</li>
+            <li>Test reports and documentation</li>
+            <li>Cross-functional collaboration</li>
+            <li>Onboarding new QA team members</li>
+          </ul>
+        </div>
+        <div>
           <h3>Test automation</h3>
           <ul>
             <li>Playwright</li>
@@ -670,23 +701,23 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <h3>Tools</h3>
           <ul>
             <li>Jira</li>
-            <li>Git and GitHub</li>
+            <li>Git, GitHub and Sourcetree</li>
+            <li>Mantis Bug Tracker</li>
             <li>Visual Studio Code</li>
             <li>Figma</li>
             <li>Trello</li>
-            <li>Google Workspace and MS Office</li>
+            <li>Google Workspace</li>
+            <li>MS Office</li>
             <li>Slack</li>
           </ul>
         </div>
         <div>
-          <h3>Ways of working</h3>
+          <h3>Additional skills</h3>
           <ul>
-            <li>Agile development</li>
-            <li>Defect management</li>
-            <li>Requirement analysis</li>
-            <li>Test reports and documentation</li>
-            <li>Cross-functional collaboration</li>
-            <li>Onboarding new QA team members</li>
+            <li>SQL</li>
+            <li>API testing (Postman)</li>
+            <li>TestRail</li>
+            <li>AI-assisted testing and development (ChatGPT, Claude)</li>
           </ul>
         </div>
       </div>
@@ -696,33 +727,41 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section class="section" id="services">
     <div class="wrap">
       <div class="section-head">
-        <h2>Services</h2>
-        <p>Areas where I can help your team. I can work from your requirements, user stories, or the live website.</p>
+        <h2>What I Bring to a QA Team</h2>
+        <p>Capabilities I've built through nearly 12 years of professional testing, requirements work and personal automation projects.</p>
       </div>
       <ul class="svc-list">
         <li class="svc">
-          <h3>Website QA testing</h3>
-          <p>Structured testing of your website or web app across common browsers and screen sizes. I check navigation, forms, content, responsive layout and your key user journeys.</p>
+          <h3>Requirements Analysis</h3>
+          <p>Review business and functional requirements, identify gaps or ambiguities, and clarify expected behavior before testing begins.</p>
         </li>
         <li class="svc">
-          <h3>Manual testing</h3>
-          <p>Hands-on functional and exploratory testing, including UI and UX checks and user acceptance testing (UAT) support.</p>
+          <h3>Functional &amp; Exploratory Testing</h3>
+          <p>Validate features against requirements while exploring additional scenarios, edge cases, and unexpected behavior.</p>
         </li>
         <li class="svc">
-          <h3>Regression testing</h3>
-          <p>Repeatable checks before each release, so new changes don't break features that already work.</p>
+          <h3>Regression &amp; Release Validation</h3>
+          <p>Verify that changes and bug fixes work correctly without negatively affecting existing functionality.</p>
         </li>
         <li class="svc">
-          <h3>Bug reporting</h3>
-          <p>Clear, reproducible reports with steps, expected and actual results, environment details and severity. I log them in Jira or the tracker your team already uses.</p>
+          <h3>Defect Investigation &amp; Reporting</h3>
+          <p>Reproduce, document, and communicate defects clearly with steps, expected vs. actual results, severity, and supporting evidence.</p>
         </li>
         <li class="svc">
-          <h3>Test case creation</h3>
-          <p>Test cases and checklists written from your requirements, so your testing is documented and can be repeated by anyone.</p>
+          <h3>Basic API Testing</h3>
+          <p>Validate API requests and responses against available API documentation or contracts, including JSON payloads, status codes, response data, and common positive and negative scenarios.</p>
         </li>
         <li class="svc">
-          <h3>Basic Playwright automation</h3>
-          <p>Starter end-to-end tests for your most important flows, built with Playwright and JavaScript using the Page Object Model.</p>
+          <h3>Basic Database Validation</h3>
+          <p>Use basic SQL queries to retrieve and validate database records when verifying application behavior and test results.</p>
+        </li>
+        <li class="svc">
+          <h3>Basic Playwright Automation</h3>
+          <p>Starter end-to-end UI automation projects for business flows using Playwright, JavaScript, and Page Object Model.</p>
+        </li>
+        <li class="svc">
+          <h3>Cross-functional Collaboration</h3>
+          <p>Work closely with developers, Business Analysts, and other stakeholders throughout development, testing, defect resolution, and release activities.</p>
         </li>
       </ul>
     </div>
